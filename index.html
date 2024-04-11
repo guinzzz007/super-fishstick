@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite para um Vinho</title>
+    <style>
+        body {
+            background-color: red;
+            font-family: cursive;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #sim, #nao {
+            display: inline-block;
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #nao {
+            font-size: 72px;
+            background-color: white;
+            color: red;
+            transform: scale(4);
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .romantic-decor {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            z-index: -1;
+        }
+        #aviso {
+            font-size: 14px;
+            color: white;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Quer tomar um vinho comigo hoje?</h1>
+    <button id="sim" onclick="window.open('https://www.youtube.com/watch?v=s7R86vzJAQY', '_blank')">Sim</button>
+    <button id="nao" onclick="moverNao()">Não</button>
+    <p id="aviso">Clique no "Não" para uma surpresa!</p>
+
+    <script>
+        function moverNao() {
+            var naoButton = document.getElementById('nao');
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+
+            var newX = Math.floor(Math.random() * (screenWidth - 200)); // Subtraindo 200 para garantir que o botão não saia completamente da tela
+            var newY = Math.floor(Math.random() * (screenHeight - 200)); // Subtraindo 200 para garantir que o botão não saia completamente da tela
+
+            naoButton.style.left = newX + 'px';
+            naoButton.style.top = newY + 'px';
+        }
+    </script>
+</body>
+</html>
